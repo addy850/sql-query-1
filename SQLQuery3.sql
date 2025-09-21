@@ -33,14 +33,13 @@ select * from empolyees;
 
 
 
---------------query for inserting data into the table ------------------------------
+--------------query for inserting employee data into the table ------------------------------
 
 
 
 SELECT *, 
-       LAG(salary_this_year) OVER (PARTITION BY name ORDER BY name) AS prev_year_salary
+       Lead(salary_this_year) OVER (PARTITION BY name ORDER BY year_ desc) AS prev_year_salary
 FROM empolyees; 
-
 
 
 -------------query to make a new column and print the previous year salary of employees-----------------------------------------
