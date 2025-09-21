@@ -31,5 +31,5 @@ Example employee salary data:
 
 ```sql
 SELECT *,
-       LAG(salary_this_year) OVER (PARTITION BY name ORDER BY year DESC) AS prev_year_salary
+       LEAD(salary_this_year) OVER (PARTITION BY name ORDER BY year DESC) AS prev_year_salary
 FROM employees;
